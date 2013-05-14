@@ -9,7 +9,7 @@
     <form action="/respuestaoccasions" method="POST">  
       <br/><p>State</p>
 	<br/>
-	<input type="text" size="20" name="id_escrito" value=""/>
+	<input type="text" size="20" name="occa" value=""/>
       <br/>
       <input type='submit' value='Accept'/>
 	</form>

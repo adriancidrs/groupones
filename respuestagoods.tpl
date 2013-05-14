@@ -9,11 +9,11 @@
     <h3>Resultado de la busqueda</h3>      
     <p> 
       <br/>
-      <br/>Nombre: {{nombre}}
-    <br/>Summary: {{resum}}
-    <br/>Date end: {{fechafini}}
-    <br/>Description: {{description}} 
-    <br/>State: {{estado}}
+      <br/>Nombre: {{nombreg}}
+    <br/>Summary: {{resumg}}
+    <br/>Date end: {{fechafinig}}
+    <br/>Description: {{descriptiong}} 
+    <br/>State: {{estadog}}
     </p>
   </body>
 </html>

@@ -9,7 +9,7 @@
     <form action="/respuestagoods" method="POST">  
       <br/><p>Select your state</p>
 	<br/>
-	<input type="text" size="20" name="id_escrito" value=""/>
+	<input type="text" size="20" name="goodg" value=""/>
       <br/>
       <input type='submit' value='Accept'/>
 	</form>
