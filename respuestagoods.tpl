@@ -8,12 +8,9 @@
     <p><img src="http://robcosh.com/wp/wp-content/uploads/2012/01/groupon-300x150.png"></p>
     <h3>Resultado de la busqueda</h3>      
     <p> 
-      <br/>
-      <br/>Nombre: {{nombreg}}
-    <br/>Summary: {{resumg}}
-    <br/>Date end: {{fechafinig}}
-    <br/>Description: {{descriptiong}} 
-    <br/>State: {{estadog}}
+     %for i in goods:
+	<p>{{i}}<img src="{{i}}"</p>
+	 %end
     </p>
   </body>
 </html>

@@ -6,18 +6,13 @@
   </head>
   <body>
     <p><img src="http://robcosh.com/wp/wp-content/uploads/2012/01/groupon-300x150.png"></p>
-    <h3>Resultado de la busqueda</h3>      
-    <p> 
-      <br/>
-      <br/>Title: {{tituloo}}
-    <br/>Summary: {{descripciono}}
-    <br/>Price: {{precioo}}
-    <br/>Data: {{datoso}} 
-    <br/>Date end: {{fechafino}}
-    <br/>Description: {{descripciono}}
-    <br/><img src={{imageno}}</a>
-    <br/>
-    </p>
-  </body>
-</html>
-
+      <h3>Resultado de la busqueda</h3>
+    <p>      
+	%for i in occasions:
+	<p>{{i}}<img src="{{i}}"></p>
+	%end
+      </p>
+    </body>
+  </html>
+    
+    

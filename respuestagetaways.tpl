@@ -8,16 +8,9 @@
     <p><img src="http://robcosh.com/wp/wp-content/uploads/2012/01/groupon-300x150.png"></p>
     <h3>Resultado de la busqueda</h3>      
     <p> 
-      <br/>
-      <br/>Title: {{titulo}}
-    <br/>Description: {{descripcion}}
-    <br/>Price: {{precio}}
-    <br/>City: {{ciudad}} 
-    <br/>Country: {{pais}}
-    <br/>State: {{estado}}
-    <br/>Date end: {{fechafin}}
-    <br/>Phone {{telefono}}
-    <br/>
+     %for i in getaways:
+	<p>{{i}}<img src="{{i}}"></p>
+	 %end
     </p>
   </body>
 </html>
