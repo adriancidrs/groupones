@@ -2,10 +2,11 @@
 <html>
   <head>
     <title>Groupones</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" /> 
   </head>
   <body>
-    <p><img src="http://robcosh.com/wp/wp-content/uploads/2012/01/groupon-300x150.png"></p>
+    <div id="container">
+		<div id="header"></div>
     <form action="/respuestagoods" method="POST">  
       <br/><p>Enter your type of deals.</p>
 	<br/>
@@ -32,6 +33,7 @@
       <input type='submit' value='Accept'/>
      </select>
 	</form>
+   </div>
   </body>
 </html>
 

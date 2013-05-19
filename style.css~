@@ -1,0 +1,45 @@
+body {
+background-color: #92CC47;
+font-family: helvetica,sans-serif;
+width: 900px;
+margin-left: auto;
+margin-right: auto;
+
+}
+#container {
+background-color: #92CC47;
+}
+
+#header {
+position: relative;
+background: url("http://robcosh.com/wp/wp-content/uploads/2012/01/groupon-300x150.png") no-repeat scroll 0 0 #92CC47;
+top: 20%;
+left: 0%;
+width: 900px;
+height: 250px;
+background-color: #92CC47;
+}
+
+#button {
+padding: 0;
+}
+
+#button li {
+display: inline;
+}
+
+#button li a {
+font-family: Arial;
+font-size:30px;
+text-decoration: none;
+float:left;
+padding: 10px;
+background-color: #92CC47;
+color: #fff;
+}
+
+#button li a:hover {
+background-color: green;
+margin-top:-2px;
+padding-bottom:12px;
+}
