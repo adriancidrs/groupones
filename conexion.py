@@ -1,11 +1,11 @@
 import bottle
 import requests
 import json
-from bottle import static_file
+from bottle import route, static_file
 
-@bottle.route('/style')
-def server_static(style):
-    return static_file(style, root='/style')
+@route('/style/style.css')
+def server_static(filename):
+    return static_file(filename, root='style/')
 
 
 @bottle.route('/')

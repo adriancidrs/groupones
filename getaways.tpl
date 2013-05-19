@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Groupones</title>
-    <link rel="stylesheet" type="text/css" href="style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style/style.css" /> 
   </head>
   <body>
 <div id="container">
