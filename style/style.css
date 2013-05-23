@@ -12,7 +12,7 @@ background-color: #92d050;
 
 #header {
 position: relative;
-background: url("style/imagen.png") no-repeat scroll 0 0 #92CC47;
+background: url("imagen.png") no-repeat scroll 0 0 #92CC47;
 top: 20%;
 left: 0%;
 width: 900px;
@@ -45,7 +45,15 @@ padding-bottom:12px;
 }
 
 #cuerpo {
-background-color: white;
-width: 600px;
-font-size:50px;
+background-color: #d6ffa9;
+width: 900px;
+font-size:15px;
+padding-left:30px;
+padding-top:30px;
+padding-right:30px;
+}
+
+h9 {
+font-size:40px;
+font-weight:bold;
 }
