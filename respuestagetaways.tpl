@@ -9,9 +9,11 @@
 		<div id="header"></div>
     <h3>Resultado de la busqueda</h3>      
     <p> 
+    <div id="cuerpo">
      %for i in getaways:
 	<p>{{i}}<img src="{{i}}"></p>
 	 %end
+	 </div>
     </p>
   </div>
   </body>

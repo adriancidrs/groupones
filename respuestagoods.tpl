@@ -11,7 +11,7 @@
     <p> 
      %for i in goods:
 	<p>{{i}}<img src="{{i}}"</p>
-	 %end
+     %end
     </p>
    </div>
   </body>

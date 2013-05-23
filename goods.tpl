@@ -14,7 +14,7 @@
 	<option value="Arts and Entertainmen">Arts and Entertainmen</option>
 	<option value="Automotive">Automotive</option>
 	<option value="Beauty & Spas">Beauty & Spas</option>
-	<option value="Education">Educationn</option>
+	<option value="Education">Education</option>
 	<option value="Financial Services">Financial Services</option>
 	<option value="Food & Drink">Food & Drink</option>
 	<option value="Home Services">Home Services</option>

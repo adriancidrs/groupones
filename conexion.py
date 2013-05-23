@@ -1,30 +1,28 @@
-import bottle
 import requests
 import json
-from bottle import route, static_file
+from bottle import route, static_file, request, template, debug, run
 
-@route('/style/style.css')
-def server_static(filename):
-    return static_file(filename, root='style/')
+@route('/style/:filename#.*#')
+def send_static(filename):
+    return static_file(filename, root='./style/')
 
-
-@bottle.route('/')
+@route('/')
 def home_page():
-    return bottle.template('index')
+    return template('index')
 
-@bottle.route('/getaways')
+@route('/getaways')
 def cs_geta():
-    return bottle.template('getaways')
+    return template('getaways')
 
-@bottle.route('/respuestagetaways', method='POST')
+@route('/respuestagetaways', method='POST')
 def res_geta():
-    state = bottle.request.forms.get("estado")
-    r=requests.get("https://api.groupon.com/v2/channels/getaways/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","country":"Spain"})
+    country = request.forms.get("country")
+    r=requests.get("https://api.groupon.com/v2/channels/getaways/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","country":country})
     getaways = []
     resultado = json.loads(r.text)
     for i in resultado["deals"]:
-        getaways.append(i["options"][0]["discount"]["formattedAmount"])
         getaways.append(i['textAd']['headline'])
+        getaways.append(i["options"][0]["discount"]["formattedAmount"])
 #        getaways.append(i["options"][0]["redemptionLocations"][0]["city"])
 #        getaways.append(i["options"][0]["redemptionLocations"][0]["phoneNumber"])
 #        getaways.append(i["options"][0]["redemptionLocations"][0]["country"])
@@ -32,17 +30,17 @@ def res_geta():
         getaways.append(i["options"][0]["endAt"])
         getaways.append(i["options"][0]["details"][0]["description"])
         getaways.append(i["grid4ImageUrl"])
-    return bottle.template("respuestagetaways", getaways=getaways)
+    return template("respuestagetaways", getaways=getaways)
     
     
-@bottle.route('/goods')
+@route('/goods')
 def cs_good():
-    return bottle.template('goods')
+    return template('goods')
 
-@bottle.route('/respuestagoods', method='POST')
+@route('/respuestagoods', method='POST')
 def res_good():
-    goodg = bottle.request.forms.get("goodg")
-    rg = requests.get("https://api.groupon.com/v2/channels/goods/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","name":goodg})
+    goodg = request.forms.get("goodg")
+    rg = requests.get("https://api.groupon.com/v2/channels/goods/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","tags":[{"name":"","name":goodg}]})
     goods = []
     resultado = json.loads(rg.text)
     for i in resultado["deals"]:
@@ -51,17 +49,18 @@ def res_good():
         goods.append(i["endAt"])
         goods.append(i["options"][0]["discount"]["formattedAmount"])
         goods.append(i["finePrint"])
+        goods.append(i["grid4ImageUrl"])
 
-    return bottle.template("respuestagoods", goods=goods)
+    return template("respuestagoods", goods=goods)
 
-@bottle.route('/occasions')
+@route('/occasions')
 def cs_occa():
-    return bottle.template('occasions')
+    return template('occasions')
 
-@bottle.route('/respuestaoccasions', method='POST')
+@route('/respuestaoccasions', method='POST')
 def res_occa():
-    occa = bottle.request.forms.get("occa")
-    ro=requests.get("https://api.groupon.com/v2/channels/occasions/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","tags":["",occa]})
+    occa = request.forms.get("occa")
+    ro=requests.get("https://api.groupon.com/v2/channels/occasions/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","utm_term":occa})
     occasions = []
     resultado = json.loads(ro.text)
     for i in resultado["deals"]:
@@ -72,7 +71,7 @@ def res_occa():
         occasions.append(i["options"][0]["discount"]["formattedAmount"])
         occasions.append(i["options"][0]["endAt"])
         occasions.append(i["options"][0]["details"][0]["description"])
-    return bottle.template("respuestaoccasions", occasions=occasions)
+    return template("respuestaoccasions", occasions=occasions)
 
-bottle.debug(True)
-bottle.run(host='localhost', port=8080)
+debug(True)
+run(host='localhost', port=8080)
