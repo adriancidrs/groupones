@@ -13,12 +13,12 @@
 	%cont = 1
 	%for i in occasions:
 	%if cont%3 == 0:
-		<p><img src="{{i}}"></p>
-	%else: 
-		<p>{{i}}</p>
-	%end
-		%cont = cont + 1
-	%end
+	         <p><img src="{{i}}"></p>
+	     %else: 
+			<p>{{i}}</p>
+	     %end
+	     %cont = cont + 1
+	 %end
 	</div>
       </p>
      </div>

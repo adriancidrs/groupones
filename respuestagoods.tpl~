@@ -7,22 +7,15 @@
   <body>
     <div id="container">
 		<div id="header"></div>
-      <h3>Search Result</h3>
-    <p>
-	<div id="cuerpo">
-	%cont = 1
-	%for i in occasions:
-	%if cont%3 == 0:
-		<p><img src="{{i}}"></p>
-	%else: 
-		<p>{{i}}</p>
-	%end
-		%cont = cont + 1
-	%end
-	</div>
-      </p>
+    <h3>Search Result</h3>      
+    <p> 
+    <div id="cuerpo">
+     %for i in goods:
+	<p>{{i}}<img src="{{i}}"</p>
+     %end
      </div>
-    </body>
-  </html>
-    
-    
+    </p>
+   </div>
+  </body>
+</html>
+

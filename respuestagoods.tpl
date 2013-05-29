@@ -10,9 +10,17 @@
     <h3>Search Result</h3>      
     <p> 
     <div id="cuerpo">
+     %cont = 1
      %for i in goods:
-	<p>{{i}}<img src="{{i}}"</p>
-     %end
+	 %if cont%5 == 0:
+	         <p><img src="{{i}}"></p>
+	     %elif cont%10 == 1:
+			<h9><p>{{i}}</p></h9>
+	     %else: 
+			<p>{{i}}</p>
+	     %end
+	     %cont = cont + 1
+	 %end
      </div>
     </p>
    </div>
