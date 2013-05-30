@@ -57,3 +57,40 @@ h9 {
 font-size:40px;
 font-weight:bold;
 }
+
+a:link, A:visited { 
+text-decoration: none;
+color:black;
+cursor:pointer
+}
+
+a:hover {
+text-decoration: blink;
+font-weight:bold;
+color:black
+}
+
+a:active {
+text-decoration: ;
+font-weight:bold;
+color:red
+}
+
+input {
+cursor:move
+}
+
+input:active input:visited {
+cursor:progress
+}
+
+select {
+cursor:pointer
+}
+
+option {
+background-color: #d6ffa9;
+font-weight:bold
+}
+
+

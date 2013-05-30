@@ -6,24 +6,25 @@
   </head>
   <body>
     <div id="container">
-		<div id="header"></div>
-    <h3>Search Result</h3>      
-    <p> 
-    <div id="cuerpo">
-     %cont = 1
-     %for i in goods:
-	 %if cont%5 == 0:
-	         <p><img src="{{i}}"></p>
-	     %elif cont%10 == 1:
-			<h9><p>{{i}}</p></h9>
-	     %else: 
-			<p>{{i}}</p>
-	     %end
-	     %cont = cont + 1
-	 %end
-     </div>
-    </p>
-   </div>
-  </body>
+      <div id="header"></div>
+      <h3>Search Result</h3>      
+      <p> 
+	<div id="cuerpo">
+	  %cont = 1
+	  %for i in goods:
+	  %if cont%5 == 0:
+	  <p><img src="{{i}}"></p>
+	    %elif cont%10 == 1:
+	    <h9><p>{{i}}</p></h9>
+	    %else: 
+	  <p>{{i}}</p>
+	  %end
+	  %cont = cont + 1
+	  %end
+	  </div>
+	</p>
+      </div>
+      <a href="/">Return homepage</a> 
+    </body>
 </html>
 

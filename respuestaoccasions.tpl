@@ -6,23 +6,19 @@
   </head>
   <body>
     <div id="container">
-		<div id="header"></div>
+      <div id="header"></div>
       <h3>Search Result</h3>
-    <p>
+      <p>
 	<div id="cuerpo">
-	%cont = 1
-	%for i in occasions:
-	%if cont%3 == 0:
-		<p><img src="{{i}}"></p>
-	%else: 
-		<p>{{i}}</p>
-	%end
-		%cont = cont + 1
-	%end
-	</div>
-      </p>
-     </div>
+	  %for i in occasions:
+	  <p><img src="{{i}}"></p>
+	  <p>{{i}}</p>
+	  %end
+	  </div>
+	</p>
+      </div>
+      <a href="/">Return homepage</a> 
     </body>
-  </html>
+ </html>
     
     

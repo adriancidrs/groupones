@@ -40,7 +40,7 @@ def cs_good():
 @route('/respuestagoods', method='POST')
 def res_good():
     goodg = request.forms.get("goodg")
-    rg = requests.get("https://api.groupon.com/v2/channels/goods/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","tags":goodg})
+    rg = requests.get("https://api.groupon.com/v2/channels/goods/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","tags":[{"name":"","name":goodg}]})
     goods = []
     resultado = json.loads(rg.text)
     for i in resultado["deals"]:
@@ -60,7 +60,7 @@ def cs_occa():
 @route('/respuestaoccasions', method='POST')
 def res_occa():
     occa = request.forms.get("occa")
-    ro=requests.get("https://api.groupon.com/v2/channels/occasions/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","tag":occa})
+    ro=requests.get("https://api.groupon.com/v2/channels/occasions/deals.json", params = {"client_id":"eb9ff18a490c1d0e00419123560879fa1b16e02d","status":"open","utm_term":occa})
     occasions = []
     resultado = json.loads(ro.text)
     for i in resultado["deals"]:
